@@ -1,0 +1,11 @@
+DEBUG:root:プログラム開始。
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+DEBUG:root:unix_time_dbを取得 ： 1641544499
+DEBUG:root:nowとdbの時間差 ： 2741439
+DEBUG:root:DBにある時刻と1時間（3600秒）を超えているとき
+DEBUG:root:get_api() の開始
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): weather.tsukumijima.net:443
+DEBUG:urllib3.connectionpool:https://weather.tsukumijima.net:443 "GET /api/forecast?city=130010 HTTP/1.1" 200 6903
+DEBUG:root:get_api() の終了
+DEBUG:root:WebAPIからのtenki_dataを取得
+INFO:werkzeug:172.18.0.1 - - [08/Feb/2022 02:05:39] "[37mGET / HTTP/1.1[0m" 200 -

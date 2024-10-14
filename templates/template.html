@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天気</title>
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+</head>
+
+<body>
+    <h1>{{ tenki_data.title }}</h1>
+    <p>
+      <!--今日の日付-->
+      {{tenki_data.forecasts.0.dateLabel}}
+      ({{tenki_data.forecasts.0.date}})<br>
+      <!--今日の天気-->
+      {{tenki_data.forecasts.0.telop}}
+    </p>
+
+    <p>
+      <!--明日の日付-->
+      {{tenki_data.forecasts.1.dateLabel}}
+      ({{tenki_data.forecasts.1.date}})<br>
+      <!--明日の天気-->
+      {{tenki_data.forecasts.1.telop}}<br>
+      <!--明日の気温-->
+      気温:<br>
+      <ul>
+        <li>最高気温：{{tenki_data.forecasts.1.temperature.max.celsius}}度</li>
+        <li>最低気温：{{tenki_data.forecasts.1.temperature.min.celsius}}度</li>
+      </ul>
+      <!--明日の降水確率-->
+      降水確率:<br>
+      <ul>
+        <li>00-06時：{{tenki_data.forecasts.1.chanceOfRain.T00_06}}</li>
+        <li>06-12時：{{tenki_data.forecasts.1.chanceOfRain.T06_12}}</li>
+        <li>12-18時：{{tenki_data.forecasts.1.chanceOfRain.T12_18}}</li>
+        <li>18-24時：{{tenki_data.forecasts.1.chanceOfRain.T18_24}}</li>
+      </ul>
+    </p>
+
+    <p>
+      <a href="{{tenki_data.copyright.link}}" target="_blank">{{tenki_data.copyright.title}}</a><br>
+      <a href="{{tenki_data.copyright.provider.0.link}}" target="_blank">{{tenki_data.copyright.provider.0.name}}</a>
+    </p>
+</body>
+
+</html>
